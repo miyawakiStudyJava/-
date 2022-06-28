@@ -82,3 +82,5 @@ https://docs.docker.com/docker-for-windows/wsl-tech-preview/#download
 ※ 以下のリリースノートにある通り、Windows 10のHomeエディションでDocker Desktop for Windowsを利用するためには、2.2.2.0以降のバージョンをダウンロードして下さい。
 https://docs.docker.com/docker-for-windows/edge-release-notes/#docker-desktop-community-2220
 
+git登録
+https://docs.github.com/ja/get-started/getting-started-with-git/setting-your-username-in-git
