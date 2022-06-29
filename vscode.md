@@ -147,4 +147,8 @@ export PATH="$JDK_HOME:$PATH"
 ```console
 /usr/lib/jvm/java-1.11.0-openjdk-amd64
 ```
+
+>\\wsl$\Ubuntu-22.04\usr\lib\jvm\java-1.11.0-openjdk-amd64
+
+
 無事Javaをインストールできました。
