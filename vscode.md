@@ -25,7 +25,12 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 WSLの利点
 WSL上のソースコードへのアクセスも、特定パスをしていするだけでいい。（OSがある）
 
-Ubuntuｗを立ち上げてphpをインストール
+### 次のコマンドを実行してディストリビューションのバージョンを変更します：
+```console
+wsl --set-version <NAME> <VERSION>
+```
+
+Ubuntuを立ち上げてphpをインストール
 ```console
 sudo apt-get update
 sudo apt-get install -y apache2 php
