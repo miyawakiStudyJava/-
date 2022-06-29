@@ -131,11 +131,13 @@ Javaのインストールパスが/usr/lib/jvm/java-11-openjdk-amd64 である�
 >$ vi ~/.bashrc
 bashファイルに下記の環境変数を設定します。
 ```Console
-export JDK_HOME = "/usr/lib/jvm/java-11-openjdk-amd64"
+export JDK_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export PATH="$JDK_HOME:$PATH"
 ```
 エスケープキー押下後、
 :wq!コマンドで編集内容を保存した後、bashファイルを閉じます。
+
+※注意：「JDK_HOME="」、みたいに間隔を空けない。
 
 ※Javaの環境構築について書かれた記事を読むと環境変数を$JAVA_HOMEとしている場合が多かったですが、そうするとVScodeの拡張機能が働かず、不都合に感じました。
 
