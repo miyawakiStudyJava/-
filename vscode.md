@@ -1,5 +1,8 @@
 https://tech-lab.sios.jp/archives/21023
 
+javaをubuntu上へインストール  
+https://qiita.com/Jazuma/items/8025714508a9ad382942
+
 - Windows Subsystem for Linux
 Windowsの中でLinuxを実行できるテクノロジーです。Virtual Boxなどの仮想環境に比べて高速に起動、相互のファイルアクセスなどWindowsとの親和性が高いのが特徴です。
 
@@ -84,3 +87,62 @@ https://docs.docker.com/docker-for-windows/edge-release-notes/#docker-desktop-co
 
 git登録
 https://docs.github.com/ja/get-started/getting-started-with-git/setting-your-username-in-git
+
+
+### jdkのインストール
+
+- Javaをubuntu18.04にインストールする。
+
+手順
+① パッケージのアップデート
+>$ sudo apt update
+
+② OPEN JREをインストールする
+>$ sudo apt-get install default-jre
+
+JREがインストールできているか下記のコマンドで確認します
+
+```console
+$ java --version
+openjdk 11.0.6 2020-01-14
+OpenJDK Runtime Environment (build 11.0.6+10-post-Ubuntu-1ubuntu118.04.1)
+OpenJDK 64-Bit Server VM (build 11.0.6+10-post-Ubuntu-1ubuntu118.04.1, mixed mode, sharing)
+```
+
+② OPEN JDKをインストールする
+
+> $ sudo apt-get install default-jdk
+先ほどと同じようにインストールできているか確認します。javacはJavaコンパイラを扱うコマンドです。
+
+> $ javac --version
+javac 11.0.6
+① ②ともにバージョン指定をしてインストールすることもできますが、慣れないうちはdefault-jre, default-jdkで最新版をインストールするのが無難だと思います。
+
+③ 環境変数の設定
+まずは下記のコマンドでjavaのインストールパスを確認します。
+```Console
+$ sudo update-alternatives --config java
+There is only one alternative in link group java (providing /usr/bin/java): /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+Nothing to configure
+Javaのインストールパスが/usr/lib/jvm/java-11-openjdk-amd64 であることを確認できました。
+```
+続いて 下記のコマンドでbashファイルを開きます。
+
+>$ vi ~/.bashrc
+bashファイルに下記の環境変数を設定します。
+```Console
+export JDK_HOME = "/usr/lib/jvm/java-11-openjdk-amd64"
+export PATH="$JDK_HOME:$PATH"
+```
+エスケープキー押下後、
+:wq!コマンドで編集内容を保存した後、bashファイルを閉じます。
+
+※Javaの環境構築について書かれた記事を読むと環境変数を$JAVA_HOMEとしている場合が多かったですが、そうするとVScodeの拡張機能が働かず、不都合に感じました。
+
+環境変数が設定されているのを確認します。
+
+>$ echo $JDK_HOME
+```console
+/usr/lib/jvm/java-1.11.0-openjdk-amd64
+```
+無事Javaをインストールできました。
